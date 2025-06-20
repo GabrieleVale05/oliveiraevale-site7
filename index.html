@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empréstimo Bolsa Família e Antecipação FGTS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-green-50 text-gray-900 font-sans">
+
+  <header class="bg-green-600 text-white py-6 text-center shadow">
+    <h1 class="text-3xl font-bold">Empréstimo Bolsa Família e Antecipação do FGTS</h1>
+    <p class="text-lg mt-2">Dinheiro rápido, fácil e com segurança garantida!</p>
+  </header>
+
+  <section class="max-w-4xl mx-auto p-6 bg-white mt-6 rounded-xl shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">Simule e solicite seu crédito agora!</h2>
+    <p class="mb-6 text-gray-700">Se você recebe o Bolsa Família ou tem saldo no FGTS, pode antecipar valores com condições especiais. Faça uma simulação gratuita e sem compromisso.</p>
+
+    <form id="whatsappForm" onsubmit="enviarParaWhatsapp(); return false;" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1" for="nome">Nome completo</label>
+        <input class="w-full border border-gray-300 rounded px-3 py-2" type="text" id="nome" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1" for="cpf">CPF</label>
+        <input class="w-full border border-gray-300 rounded px-3 py-2" type="text" id="cpf" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1" for="celular">WhatsApp</label>
+        <input class="w-full border border-gray-300 rounded px-3 py-2" type="tel" id="celular" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Tipo de crédito</label>
+        <select class="w-full border border-gray-300 rounded px-3 py-2" id="credito">
+          <option>Empréstimo Bolsa Família</option>
+          <option>Antecipação FGTS</option>
+        </select>
+      </div>
+      <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg w-full font-bold" type="submit">
+        Solicitar agora via WhatsApp
+      </button>
+    </form>
+  </section>
+
+  <section class="max-w-4xl mx-auto mt-10 p-6 bg-green-100 rounded-lg">
+    <h3 class="text-xl font-semibold mb-3">Vantagens:</h3>
+    <ul class="list-disc list-inside text-gray-800 space-y-2">
+      <li>Aprovação rápida e sem burocracia</li>
+      <li>Parcelas que cabem no seu bolso</li>
+      <li>Depósito direto na conta</li>
+      <li>100% seguro e autorizado</li>
+    </ul>
+  </section>
+
+  <footer class="mt-10 bg-green-600 text-white text-center p-4">
+    <p>© 2025 Empréstimo Fácil. Todos os direitos reservados.</p>
+    <p class="text-sm">Esta página não é afiliada ao governo. Suporte via WhatsApp.</p>
+  </footer>
+
+  <script>
+    function enviarParaWhatsapp() {
+      const nome = document.getElementById('nome').value;
+      const cpf = document.getElementById('cpf').value;
+      const celular = document.getElementById('celular').value;
+      const credito = document.getElementById('credito').value;
+      const mensagem = `Olá! Gostaria de solicitar crédito.%0A%0ANome: ${nome}%0ACPF: ${cpf}%0AWhatsApp: ${celular}%0ATipo de crédito: ${credito}`;
+      const telefone = "5594992424536";
+      const url = `https://wa.me/${telefone}?text=${mensagem}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
